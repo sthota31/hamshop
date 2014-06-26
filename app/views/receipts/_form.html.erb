@@ -1,0 +1,12 @@
+
+<div class="form-group">
+    <%= f.label :customer_name %><br>
+    <%= f.text_field :customer_name %>
+  </div>
+<div class="form-group">
+   <input onclick="addRow(this.form);" type="button" value="Add row" /> (This row will not be saved unless you click on "Add row" first)
+  <div id="itemRows">
+  ProductID: <input type="text" name="add_id" />Qty: <input type="text" name="add_qty" size="2" /> 
+  </div>
+  <button type="submit" class="btn btn-sm">Submit</button>
+ </div>

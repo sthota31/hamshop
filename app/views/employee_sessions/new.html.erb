@@ -1,0 +1,15 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+<div style="border-color:#dddddd;border-style:solid; padding:10px;" >
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:employee_session, url: employee_sessions_path) do |f| %>
+      <%= f.label :user_name %>
+      <%= f.text_field :username %><br/>
+      <%= f.label :location %>
+      <%= f.select :location_id, options_from_collection_for_select(@locations, "id", "name")%><br/>
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" ,:id=>"login" %>
+    <% end %>
+ </div>
+</div>
+</div>

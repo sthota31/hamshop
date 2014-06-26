@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hamshop</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'layouts/header' %>
+    <div class="container">
+    	<div style="border-color:#dddddd;border-style:solid; padding:10px;" >
+    	<div class="flash">
+    	<% flash.each do |name, msg| %>
+    	 <%= javascript_tag %Q{$.notification({ message:"#{msg}", type:"#{name}" });} %> 
+    	<% end %>
+    </div>
+      <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+</body>
+</html>
+
+

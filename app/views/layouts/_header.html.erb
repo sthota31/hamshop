@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to  current_account.name, '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Locations",    locations_path,:style=>"font-size:20px;font-weight:bold;" %></li>
+          <li><%= link_to "Inventory",  products_path,:style=>"font-size:20px;font-weight:bold;"    %></li>
+          <li><%= link_to "Sales",  receipts_path ,:style=>"font-size:20px;font-weight:bold;"   %></li>
+          <li><%= link_to "Sign out", signout_path, method: "delete",:style=>"font-size:20px;font-weight:bold;"  %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+

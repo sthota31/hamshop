@@ -1,0 +1,17 @@
+<div class="container-fluid" style="padding-top:50px">
+    <div class="row-fluid">
+        <div class="span9">
+<h4 style="align:left;">New product</h4>
+
+<ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+<%= form_for @product, :url => products_path, :html => { :multipart => true } do |f| %>
+<%= render :partial => 'form', :locals => {:f => f} %> 
+<% end %>
+
+	</div>
+</div>
+</div>

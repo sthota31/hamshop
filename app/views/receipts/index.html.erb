@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row-fluid">
+        <div class="span9">
+          <h3>Receipts List</h3>
+          <div style="float:right;padding:10px;"><%= link_to 'New Sale', new_receipt_path ,:class=>"label label-default"%></div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Custmer Name</th>
+                <th>Product Info</th>
+                <th>Total Cost</th>
+                <th>Create at</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+          <% @receipts.each do |receipt| %>
+              <tr class="active">
+                <td><%= receipt.customer_name %></td>
+                <td><%= receipt.products_info %></td>
+                <td><%= to_dollars(receipt.total_cost) %></td>
+                <td><%= receipt.created_at.strftime("%m/%d/%Y") %></td>
+                <td><%= link_to 'Receipt', receipt_path(receipt) %></td>
+                <td><%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+</div>
+
+
+
+
+

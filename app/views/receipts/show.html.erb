@@ -1,0 +1,23 @@
+<div class="container-fluid" style="padding-top:50px">
+    <div class="row-fluid">
+        <div class="span9">
+        	<h4 style="align:left;">Reciept for <%=@receipt.customer_name %></h4>
+
+        <table class="table table-bordered">
+            	<tr>
+                	<th>Products Sold</th>
+                	<td><%= @receipt.products_info %></td>
+            	</tr>
+            	<tr>
+                	<th>Total Cost</th>
+                	<td><%= to_dollars(@receipt.total_cost) %></td>
+            	</tr>
+            	<tr>
+                	<th>Time</th>
+                	<td><%= @receipt.created_at.strftime("%m/%d/%Y") %></td>
+            	</tr>
+          </table>
+
+        </div>
+    </div>
+</div>

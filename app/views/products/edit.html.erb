@@ -1,0 +1,19 @@
+<div class="container-fluid" style="padding-top:50px">
+    <div class="row-fluid">
+        <div class="span9">
+<h1>Editing product</h1>
+<ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+
+<%= form_for @product, :url => product_path(@product), :html => { :multipart => true } do |f| %>
+<%= render :partial => 'form', :locals => {:f => f} %> 
+<% end %>
+
+<%= link_to 'Back', products_path %>
+</div>
+</div>
+</div>

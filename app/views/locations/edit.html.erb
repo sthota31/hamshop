@@ -1,0 +1,17 @@
+<div class="container-fluid" style="padding-top:50px">
+    <div class="row-fluid">
+        <div class="span9">
+<h1>Editing Location</h1>
+<ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+<%= form_for @location, :url => location_path(@location), :html => { :multipart => true } do |f| %>
+<%= render :partial => 'form', :locals => {:f => f} %> 
+<% end %>
+
+</div>
+</div>
+</div>

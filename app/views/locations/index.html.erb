@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row-fluid">
+        <div class="span9">
+          <h3>Locations List</h3>
+          <div style="float:right;padding:10px;"><%= link_to 'New Location', new_location_path ,:class=>"label label-default"%></div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+          <% @locations.each do |location| %>
+              <tr class="active">
+                <td><%= location.name %></td>
+                <td><%= location.address %></td>
+                <td><%= link_to 'Edit', edit_location_path(location) %></td>
+                <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+
+
+
+
+
